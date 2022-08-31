@@ -57,11 +57,40 @@ for(let i=0; i< data_x.length; i++) {
         
         )
 
+</script>
+<script>
+
+var xc1= [];
+var yc1= [];
+var zc1= [];
+
+
+
+$.get("/get_coordinates_conductors", function(result) {
+                var data_xc = result['x1'];
+                var data_yc = result['y1'];
+                var data_zc = result['z1'];
+                console.log(data_xc);
+for (let j=0; j< data_xc.length; j++) {
+
+        xc1[j]=data_xc[j]
+        yc1[j]=data_yc[j]  
+        zc1[j]=data_zc[j]
+      
+    } 
+        // console.log(xp)
+        // console.log(zp)
+        // console.log(yp)console.log(yp)
+        // console.log(yp[0])
+    }
+        
+        )
+
+
    
-console.log(yp)
-console.log(typeof xp)
-console.log(yp.length)
-console.log(yp)
+console.log(xc1)
+console.log(yc1)
+console.log(zc1)
 </script>
     <body>
 
