@@ -63,19 +63,108 @@ for(let i=0; i< data_x.length; i++) {
 var xc1= [];
 var yc1= [];
 var zc1= [];
-
+var xc2= [];
+var yc2= [];
+var zc2= [];
+var xc3= [];
+var yc3= [];
+var zc3= [];
+var xc4= [];
+var yc4= [];
+var zc4= [];
+var xc5= [];
+var yc5= [];
+var zc5= [];
+var xc6= [];
+var yc6= [];
+var zc6= [];
+var xc7= [];
+var yc7= [];
+var zc7= [];
+var xc8= [];
+var yc8= [];
+var zc8= [];
+var xc9= [];
+var yc9= [];
+var zc9= [];
+var xc10= [];
+var yc10= [];
+var zc10= [];
+var xc11= [];
+var yc11= [];
+var zc11= [];
 
 
 $.get("/get_coordinates_conductors", function(result) {
-                var data_xc = result['x1'];
-                var data_yc = result['y1'];
-                var data_zc = result['z1'];
-                console.log(data_xc);
-for (let j=0; j< data_xc.length; j++) {
+                var data_xc1 = result['x1'];
+                var data_yc1 = result['y1'];
+                var data_zc1 = result['z1'];
+                var data_xc2 = result['x2'];
+                var data_yc2 = result['y2'];
+                var data_zc2 = result['z2'];
+                var data_xc3 = result['x3'];
+                var data_yc3 = result['y3'];
+                var data_zc3 = result['z3'];
+                var data_xc4 = result['x4'];
+                var data_yc4 = result['y4'];
+                var data_zc4 = result['z4'];
+                var data_xc5 = result['x5'];
+                var data_yc5 = result['y5'];
+                var data_zc5 = result['z5'];
+                var data_xc6 = result['x6'];
+                var data_yc6 = result['y6'];
+                var data_zc6 = result['z6'];
+                var data_xc7 = result['x7'];
+                var data_yc7 = result['y7'];
+                var data_zc7 = result['z7'];
+                var data_xc8 = result['x8'];
+                var data_yc8 = result['y8'];
+                var data_zc8 = result['z8'];
+                var data_xc9 = result['x9'];
+                var data_yc9 = result['y9'];
+                var data_zc9 = result['z9'];
+                var data_xc10 = result['x10'];
+                var data_yc10 = result['y10'];
+                var data_zc10 = result['z10'];
+                var data_xc11 = result['x11'];
+                var data_yc11 = result['y11'];
+                var data_zc11 = result['z11'];
+                console.log(data_xc1);
+for (let j=0; j< data_xc1.length; j++) {
 
-        xc1[j]=data_xc[j]
-        yc1[j]=data_yc[j]  
-        zc1[j]=data_zc[j]
+        xc1[j]=data_xc1[j]
+        yc1[j]=data_yc1[j]  
+        zc1[j]=data_zc1[j]
+        xc2[j]=data_xc2[j]
+        yc2[j]=data_yc2[j]  
+        zc2[j]=data_zc2[j]
+        xc3[j]=data_xc3[j]
+        yc3[j]=data_yc3[j]  
+        zc3[j]=data_zc3[j]
+        xc4[j]=data_xc4[j]
+        yc4[j]=data_yc4[j]  
+        zc4[j]=data_zc4[j]
+        xc5[j]=data_xc5[j]
+        yc5[j]=data_yc5[j]  
+        zc5[j]=data_zc5[j]
+        xc6[j]=data_xc6[j]
+        yc6[j]=data_yc6[j]  
+        zc6[j]=data_zc6[j]
+        xc7[j]=data_xc7[j]
+        yc7[j]=data_yc7[j]  
+        zc7[j]=data_zc7[j]
+        xc8[j]=data_xc8[j]
+        yc8[j]=data_yc8[j]  
+        zc8[j]=data_zc8[j]
+        xc9[j]=data_xc9[j]
+        yc9[j]=data_yc9[j]  
+        zc9[j]=data_zc9[j]
+        xc10[j]=data_xc10[j]
+        yc10[j]=data_yc10[j]  
+        zc10[j]=data_zc10[j]
+        xc11[j]=data_xc11[j]
+        yc11[j]=data_yc11[j]  
+        zc11[j]=data_zc11[j]      
       
     } 
         // console.log(xp)
@@ -88,9 +177,9 @@ for (let j=0; j< data_xc.length; j++) {
 
 
    
-console.log(xc1)
-console.log(yc1)
-console.log(zc1)
+console.log(xc3)
+console.log(yc10)
+console.log(zc11)
 </script>
     <body>
 
@@ -185,85 +274,134 @@ scene.add( cylinder[i] );
 
 
 
-//WIRE 1
 
-var curveRoadNo1 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( -1.1455622364301234, 293.347158013558/10, 0.8396915588527918 ),
-    new THREE.Vector3( 7.668897353694774, 292.009670998508/10, 8.695489291101694 ),new THREE.Vector3( 19.421510139247403,291.459028578464/10,19.16988624818623),new THREE.Vector3( 28.235969727509655, 291.968154568372/10,27.025683967396617)])
+var curveRoadNo=[]
+var mesh_c=[]
+var geometry_c=[]
+var material_c=[]
+
+
+for (let k=0; k< xc1.length; k++ ){
+curveRoadNo[k]=new THREE.CatmullRomCurve3([
+    new THREE.Vector3( xc1[k],zc1[k],yc1[k]),
+    new THREE.Vector3( xc2[k],zc2[k],yc2[k]), 
+    new THREE.Vector3( xc3[k],zc3[k],yc3[k]), 
+    new THREE.Vector3( xc4[k],zc4[k],yc4[k]), 
+    new THREE.Vector3( xc5[k],zc5[k],yc5[k]), 
+    new THREE.Vector3( xc6[k],zc6[k],yc6[k]), 
+    new THREE.Vector3( xc7[k],zc7[k],yc7[k]), 
+    new THREE.Vector3( xc8[k],zc8[k],yc8[k]), 
+    new THREE.Vector3( xc9[k],zc9[k],yc9[k]), 
+    new THREE.Vector3( xc10[k],zc10[k],yc10[k]), 
+    new THREE.Vector3( xc11[k],zc11[k],yc11[k])
+])
   
-  const geometry = new THREE.TubeGeometry( curveRoadNo1, 64, 0.02, 8, false );
-  const material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh = new THREE.Mesh( geometry, material );
-  scene.add( mesh );
+geometry_c[k] = new THREE.TubeGeometry( curveRoadNo[k], 64, 0.02, 8, false );
+material_c[k] = new THREE.MeshBasicMaterial( { color: 0x000000 } );
+mesh_c[k] = new THREE.Mesh( geometry_c[k],material_c[k]);
+scene.add(mesh_c[k]);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+// curveRoadNo[7] = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( 0.20575016678776592,293.431135957642/10,-0.41181617975234985),
+//     new THREE.Vector3(8.99553593492601,292.359020866827/10,7.427064970135689),new THREE.Vector3(20.715250287321396,291.776710470395/10,17.878906498663127),new THREE.Vector3(29.50503605394624,291.974154494837/10,25.717787647619843)])
   
-  //WIRE 2
+//     geometry[7] = new THREE.TubeGeometry( curveRoadNo[7], 64, 0.02, 8, false );
+//     material[7] = new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//     mesh[7] = new THREE.Mesh( geometry[7], material[7] );
+//     scene.add( mesh[7] );
+//     console.log(curveRoadNo[7])
+
+// //WIRE 1
+
+// var curveRoadNo1 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( -1.1455622364301234, 293.347158013558/10, 0.8396915588527918 ),
+//     new THREE.Vector3( 7.668897353694774, 292.009670998508/10, 8.695489291101694 ),new THREE.Vector3( 19.421510139247403,291.459028578464/10,19.16988624818623),new THREE.Vector3( 28.235969727509655, 291.968154568372/10,27.025683967396617)])
   
-  var curveRoadNo2 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( -0.37054140941472724, 291.440906418797/10, 0.09223296958953142 ),
-    new THREE.Vector3( 8.419193830399308, 290.50693591184/10, 7.870228558778763 ),new THREE.Vector3( 17.208929071144667, 289.946033818785/10,15.648224148899317 ),new THREE.Vector3( 28.92857605702011, 289.777571553903/10,26.018884927034378)])
+//   const geometry = new THREE.TubeGeometry( curveRoadNo1, 64, 0.02, 8, false );
+//   const material = new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh = new THREE.Mesh( geometry, material );
+//   scene.add( mesh );
   
-  const geometry3 = new THREE.TubeGeometry( curveRoadNo2, 64, 0.02, 8, false );
-  const material3= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh2 = new THREE.Mesh( geometry3, material3 );
-  scene.add( mesh2 );
+//   //WIRE 2
   
-  //WIRE 3
-  var curveRoadNo3 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( 0.23527719732373953, 290.913314183378/10,-0.5837629800662398),
-    new THREE.Vector3(8.85244362265803, 289.845035754284/10,7.387307329103351),new THREE.Vector3( 20.341998854884878, 289.238167386377/10,18.01540106907487),new THREE.Vector3( 28.959165279055014, 289.394965760292/10,25.98647137824446)])
+//   var curveRoadNo2 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( -0.37054140941472724, 291.440906418797/10, 0.09223296958953142 ),
+//     new THREE.Vector3( 8.419193830399308, 290.50693591184/10, 7.870228558778763 ),new THREE.Vector3( 17.208929071144667, 289.946033818785/10,15.648224148899317 ),new THREE.Vector3( 28.92857605702011, 289.777571553903/10,26.018884927034378)])
   
-  const geometry4 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
-  const material4= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh3 = new THREE.Mesh( geometry4, material4 );
-  scene.add( mesh3 );
+//   const geometry3 = new THREE.TubeGeometry( curveRoadNo2, 64, 0.02, 8, false );
+//   const material3= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh2 = new THREE.Mesh( geometry3, material3 );
+//   scene.add( mesh2 );
   
-  //WIRE 4
-  var curveRoadNo4 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( -0.1243802581448108, 290.924396487641/10,-0.1824424210935831),
-    new THREE.Vector3( 8.597199439944234, 289.644158135097/10, 7.671712978743017 ),new THREE.Vector3(20.225972370011732,288.868699619755/10,18.14392017852515),new THREE.Vector3( 28.947552065656055, 288.983800100647/10,25.998075577430427)])
+//   //WIRE 3
+//   var curveRoadNo3 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( 0.23527719732373953, 290.913314183378/10,-0.5837629800662398),
+//     new THREE.Vector3(8.85244362265803, 289.845035754284/10,7.387307329103351),new THREE.Vector3( 20.341998854884878, 289.238167386377/10,18.01540106907487),new THREE.Vector3( 28.959165279055014, 289.394965760292/10,25.98647137824446)])
   
-  const geometry5 = new THREE.TubeGeometry( curveRoadNo4, 64, 0.02, 8, false );
-  const material5= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh4 = new THREE.Mesh( geometry5, material5 );
-  scene.add( mesh4 );
+//   const geometry4 = new THREE.TubeGeometry( curveRoadNo3, 64, 0.02, 8, false );
+//   const material4= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh3 = new THREE.Mesh( geometry4, material4 );
+//   scene.add( mesh3 );
   
-  //WIRE 5
-  var curveRoadNo5 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( -0.5631367061869241,290.760297894014/10,0.6586254192516208),
-    new THREE.Vector3( 8.302457271027379, 289.376124224568/10, 8.245421359315515 ),new THREE.Vector3(17.168051245855168,288.607719553586/10,15.83221728913486),new THREE.Vector3(28.988843212253414,288.537620452957/10,25.94794520828873)])
+//   //WIRE 4
+//   var curveRoadNo4 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( -0.1243802581448108, 290.924396487641/10,-0.1824424210935831),
+//     new THREE.Vector3( 8.597199439944234, 289.644158135097/10, 7.671712978743017 ),new THREE.Vector3(20.225972370011732,288.868699619755/10,18.14392017852515),new THREE.Vector3( 28.947552065656055, 288.983800100647/10,25.998075577430427)])
   
-  const geometry6 = new THREE.TubeGeometry( curveRoadNo5, 64, 0.02, 8, false );
-  const material6= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh5 = new THREE.Mesh( geometry6, material6 );
-  scene.add( mesh5 );
+//   const geometry5 = new THREE.TubeGeometry( curveRoadNo4, 64, 0.02, 8, false );
+//   const material5= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh4 = new THREE.Mesh( geometry5, material5 );
+//   scene.add( mesh4 );
   
-  //WIRE 6
-  var curveRoadNo6 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( -0.8786044995067641,290.59892309874/10,1.0513131599873304),
-    new THREE.Vector3(8.06984540517442,289.123479407451/10,8.533791529014707),new THREE.Vector3(20.001111948338803,288.120492590558/10,18.510429348796606),new THREE.Vector3( 28.949561854475178,288.088727316581/10,25.992907719686627)])
+//   //WIRE 5
+//   var curveRoadNo5 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( -0.5631367061869241,290.760297894014/10,0.6586254192516208),
+//     new THREE.Vector3( 8.302457271027379, 289.376124224568/10, 8.245421359315515 ),new THREE.Vector3(17.168051245855168,288.607719553586/10,15.83221728913486),new THREE.Vector3(28.988843212253414,288.537620452957/10,25.94794520828873)])
   
-  const geometry7 = new THREE.TubeGeometry( curveRoadNo6, 64, 0.02, 8, false );
-  const material7= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh6 = new THREE.Mesh( geometry7, material7 );
-  scene.add( mesh6 );
-  //WIRE 7
-  var curveRoadNo7 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3(-0.4276559423888102,293.56095809414/10,0.17481542006134987),
-    new THREE.Vector3(8.36981468833983,292.253802916903/10,8.025620579719543),new THREE.Vector3(17.16728531807894,291.699040733546/10,15.876425748690963),new THREE.Vector3(28.897246157051995,292.126305284202/10,26.344165958464146)])
+//   const geometry6 = new THREE.TubeGeometry( curveRoadNo5, 64, 0.02, 8, false );
+//   const material6= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh5 = new THREE.Mesh( geometry6, material6 );
+//   scene.add( mesh5 );
   
-  const geometry8 = new THREE.TubeGeometry( curveRoadNo7, 64, 0.02, 8, false );
-  const material8= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh7 = new THREE.Mesh( geometry8, material8 );
-  scene.add( mesh7 );
-  //WIRE 8
-  var curveRoadNo8 = new THREE.CatmullRomCurve3([
-    new THREE.Vector3( 0.20575016678776592,293.431135957642/10,-0.41181617975234985),
-    new THREE.Vector3(8.99553593492601,292.359020866827/10,7.427064970135689),new THREE.Vector3(20.715250287321396,291.776710470395/10,17.878906498663127),new THREE.Vector3(29.50503605394624,291.974154494837/10,25.717787647619843)])
+//   //WIRE 6
+//   var curveRoadNo6 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( -0.8786044995067641,290.59892309874/10,1.0513131599873304),
+//     new THREE.Vector3(8.06984540517442,289.123479407451/10,8.533791529014707),new THREE.Vector3(20.001111948338803,288.120492590558/10,18.510429348796606),new THREE.Vector3( 28.949561854475178,288.088727316581/10,25.992907719686627)])
   
-  const geometry9 = new THREE.TubeGeometry( curveRoadNo8, 64, 0.02, 8, false );
-  const material9= new THREE.MeshBasicMaterial( { color: 0x000000 } );
-  const mesh8 = new THREE.Mesh( geometry9, material9 );
-  scene.add( mesh8 );
+//   const geometry7 = new THREE.TubeGeometry( curveRoadNo6, 64, 0.02, 8, false );
+//   const material7= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh6 = new THREE.Mesh( geometry7, material7 );
+//   scene.add( mesh6 );
+//   //WIRE 7
+//   var curveRoadNo7 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3(-0.4276559423888102,293.56095809414/10,0.17481542006134987),
+//     new THREE.Vector3(8.36981468833983,292.253802916903/10,8.025620579719543),new THREE.Vector3(17.16728531807894,291.699040733546/10,15.876425748690963),new THREE.Vector3(28.897246157051995,292.126305284202/10,26.344165958464146)])
+  
+//   const geometry8 = new THREE.TubeGeometry( curveRoadNo7, 64, 0.02, 8, false );
+//   const material8= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh7 = new THREE.Mesh( geometry8, material8 );
+//   scene.add( mesh7 );
+//   //WIRE 8
+//   var curveRoadNo8 = new THREE.CatmullRomCurve3([
+//     new THREE.Vector3( 0.20575016678776592,293.431135957642/10,-0.41181617975234985),
+//     new THREE.Vector3(8.99553593492601,292.359020866827/10,7.427064970135689),new THREE.Vector3(20.715250287321396,291.776710470395/10,17.878906498663127),new THREE.Vector3(29.50503605394624,291.974154494837/10,25.717787647619843)])
+  
+//   const geometry9 = new THREE.TubeGeometry( curveRoadNo8, 64, 0.02, 8, false );
+//   const material9= new THREE.MeshBasicMaterial( { color: 0x000000 } );
+//   const mesh8 = new THREE.Mesh( geometry9, material9 );
+//   scene.add( mesh8 );
   scene.background = new THREE.Color( 0xffffff );
 //---------------------------------------------------------------------------------------------------------------------------------------------------------
 
