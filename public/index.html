@@ -169,6 +169,7 @@ const renderer = new THREE.WebGLRenderer()
 renderer.setSize(window.innerWidth, window.innerHeight)
 document.body.appendChild(renderer.domElement)
 const controls = new OrbitControls(camera, renderer.domElement)
+init()
 window.addEventListener(
     'resize',
     () => {
@@ -182,6 +183,20 @@ window.addEventListener(
 const stats = Stats()
 document.body.appendChild(stats.dom)
 
+function init() {
+
+    var saveLink = document.createElement('div');
+    saveLink.style.position = 'absolute';
+    saveLink.style.top = '10px';
+    saveLink.style.width = '100%';
+    saveLink.style.color = 'white !important';
+    saveLink.style.textAlign = 'center';
+    saveLink.innerHTML =
+        '<a href="#" id="saveLink">Save Frame</a>';
+    document.body.appendChild(saveLink);
+}
+document.getElementById("saveLink").addEventListener('click', saveAsJson);
+function saveAsJson(){console.log('hello')}
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Code to map poles
 var geometry_pole=[]
