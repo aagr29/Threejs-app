@@ -196,7 +196,34 @@ function init() {
     document.body.appendChild(saveLink);
 }
 document.getElementById("saveLink").addEventListener('click', saveAsJson);
-function saveAsJson(){console.log('hello')}
+function saveAsJson()
+{  
+    var result=scene.toJSON();
+    var fileName = 'myData.json';
+
+// Create a blob of the data
+    var fileToSave = new Blob([JSON.stringify(result)], {
+    type: 'application/json'
+});
+
+// Save the file
+    saveAs(fileToSave, fileName);
+}
+
+function saveAs(content, fileName) {
+  const a = document.createElement("a");
+  const isBlob = content.toString().indexOf("Blob") > -1;
+  let url = content;
+  if (isBlob) {
+    url = window.URL.createObjectURL(content);
+  }
+  a.href = url;
+  a.download = fileName;
+  a.click();
+  if (isBlob) {
+    window.URL.revokeObjectURL(url);
+  }
+}
 //-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 //Code to map poles
 var geometry_pole=[]
